@@ -1,0 +1,1 @@
+REVOKE EXECUTE ON FUNCTION public.set_flow_type() FROM PUBLIC, anon, authenticated;

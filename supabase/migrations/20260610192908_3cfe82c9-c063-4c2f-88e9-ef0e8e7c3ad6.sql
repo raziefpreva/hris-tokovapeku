@@ -1,0 +1,1 @@
+ALTER TYPE public.status_hari_enum ADD VALUE IF NOT EXISTS 'CUTI';

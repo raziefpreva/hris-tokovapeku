@@ -1,0 +1,1 @@
+ALTER TABLE public.jadwal_kerja ADD COLUMN IF NOT EXISTS assignments jsonb NOT NULL DEFAULT '[]'::jsonb;

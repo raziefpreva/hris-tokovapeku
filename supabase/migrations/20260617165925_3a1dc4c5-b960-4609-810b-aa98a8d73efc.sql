@@ -1,0 +1,1 @@
+ALTER TABLE public.master_ceklist_sop ADD COLUMN IF NOT EXISTS deadline_tanggal DATE;
