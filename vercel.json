@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build && (cp index.html dist/client/ 2>/dev/null || cp src/index.html dist/client/ 2>/dev/null || true)",
+  "buildCommand": "npm run build && echo '<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/><title>HRIS Tokovapeku</title></head><body><div id=\"root\"></div><script type=\"module\" src=\"/assets/app.js\"></script></body></html>' > dist/client/index.html",
   "outputDirectory": "dist/client",
   "cleanUrls": true,
   "rewrites": [
