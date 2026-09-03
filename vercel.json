@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build && cp index.html dist/client/",
+  "buildCommand": "npm run build && (cp index.html dist/client/ 2>/dev/null || cp src/index.html dist/client/ 2>/dev/null || true)",
   "outputDirectory": "dist/client",
   "cleanUrls": true,
   "rewrites": [
