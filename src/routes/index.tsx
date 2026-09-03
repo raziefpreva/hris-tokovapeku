@@ -7,13 +7,3 @@ export const Route = createFileRoute("/")({
     });
   },
 });
-EOFcat << 'EOF' > src/routes/index.tsx
-import { createFileRoute, redirect } from "@tanstack/react-router";
-
-export const Route = createFileRoute("/")({
-  beforeLoad: () => {
-    throw redirect({
-      to: "/app",
-    });
-  },
-});
