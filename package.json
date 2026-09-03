@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && mkdir -p .output/public public dist && cp -r dist/* .output/public/ 2>/dev/null || true && cp -r dist/* public/ 2>/dev/null || true",
+    "build": "vite build && mkdir -p public && cp -R dist/. public/ 2>/dev/null || true",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
