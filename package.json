@@ -83,6 +83,7 @@
     "globals": "^15.15.0",
     "nitro": "3.0.260603-beta",
     "nitro-nightly": "^3.0.1-20260903-085528-568b687f",
+    "nitropack": "^2.13.4",
     "prettier": "^3.7.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
