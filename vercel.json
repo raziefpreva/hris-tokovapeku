@@ -1,6 +1,1 @@
-{
-  "buildCommand": "npm run build",
-  "framework": null,
-  "outputDirectory": "dist/client",
-  "installCommand": "npm install"
-}
+{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
