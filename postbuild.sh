@@ -1,6 +1,11 @@
 #!/bin/sh
 mkdir -p dist/client
-MAIN_JS=$(ls dist/client/assets/main-*.js dist/client/assets/entry-*.js dist/client/assets/bootstrap-*.js dist/client/assets/index-*.js 2>/dev/null | head -n 1 | xargs -n 1 basename)
+
+CLIENT_ENTRY=$(ls dist/client/assets/client-*.js dist/client/assets/entry-*.js dist/client/assets/bootstrap-*.js 2>/dev/null | head -n 1 | xargs -n 1 basename)
+
+if [ -z "$CLIENT_ENTRY" ]; then
+  CLIENT_ENTRY=$(ls dist/client/assets/*.js 2>/dev/null | head -n 1 | xargs -n 1 basename)
+fi
 
 cat << HTML > dist/client/index.html
 <!DOCTYPE html>
@@ -13,7 +18,7 @@ cat << HTML > dist/client/index.html
 </head>
 <body>
   <div id="root"></div>
-  <script type="module" src="/assets/${MAIN_JS}"></script>
+  <script type="module" src="/assets/${CLIENT_ENTRY}"></script>
 </body>
 </html>
 HTML
