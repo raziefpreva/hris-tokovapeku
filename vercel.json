@@ -1,6 +1,7 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build && cp index.html dist/client/",
   "outputDirectory": "dist/client",
+  "cleanUrls": true,
   "rewrites": [
     {
       "source": "/(.*)",
