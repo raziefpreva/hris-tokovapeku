@@ -7,7 +7,9 @@ export default defineConfig({
   plugins: [
     tsConfigPaths(),
     tanstackStart({
-      routesDirectory: "src/routes",
+      tsr: {
+        routesDirectory: "./src/routes",
+      },
       server: {
         entry: "src/server.ts",
       },
