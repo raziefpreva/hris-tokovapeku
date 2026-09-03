@@ -18,5 +18,4 @@ cat << HTML > dist/client/index.html
 </html>
 HTML
 
-# Aturan routing khusus Netlify agar tidak 404 saat refresh
-echo "/* /index.html 200" > dist/client/_redirects
+echo "/*    /index.html   200" > dist/client/_redirects
