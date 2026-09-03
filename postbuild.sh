@@ -1,6 +1,11 @@
 #!/bin/sh
 mkdir -p dist/client
-BOOTSTRAP_JS=$(ls dist/client/assets/bootstrap-*.js 2>/dev/null | head -n 1 | xargs -n 1 basename)
+
+# Ambil bundel index utama yang memuat router TanStack
+MAIN_INDEX_JS=$(ls dist/client/assets/index-*.js 2>/dev/null | grep -v 'index-B' | head -n 1 | xargs -n 1 basename)
+if [ -z "$MAIN_INDEX_JS" ]; then
+  MAIN_INDEX_JS=$(ls dist/client/assets/index-*.js 2>/dev/null | head -n 1 | xargs -n 1 basename)
+fi
 
 cat << HTML > dist/client/index.html
 <!DOCTYPE html>
@@ -13,7 +18,7 @@ cat << HTML > dist/client/index.html
 </head>
 <body>
   <div id="root"></div>
-  <script type="module" src="/assets/${BOOTSTRAP_JS}"></script>
+  <script type="module" src="/assets/${MAIN_INDEX_JS}"></script>
 </body>
 </html>
 HTML
