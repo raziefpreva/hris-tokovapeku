@@ -1,6 +1,11 @@
 #!/bin/sh
 mkdir -p dist/client
+
+# Ambil bundel bootstrap terbaru
 BOOTSTRAP_JS=$(ls dist/client/assets/bootstrap-*.js 2>/dev/null | head -n 1 | xargs -n 1 basename)
+
+# Buat index.html dengan cache buster timestamp
+TIMESTAMP=$(date +%s)
 
 cat << HTML > dist/client/index.html
 <!DOCTYPE html>
@@ -13,7 +18,7 @@ cat << HTML > dist/client/index.html
 </head>
 <body>
   <div id="root"></div>
-  <script type="module" src="/assets/${BOOTSTRAP_JS}"></script>
+  <script type="module" src="/assets/${BOOTSTRAP_JS}?v=${TIMESTAMP}"></script>
 </body>
 </html>
 HTML
