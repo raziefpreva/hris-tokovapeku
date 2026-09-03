@@ -1,1 +1,10 @@
-{ "outputDirectory": ".output/public" }
+{
+  "version": 2,
+  "outputDirectory": ".output/public",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
