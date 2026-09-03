@@ -6,7 +6,12 @@ import tsConfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [
     tsConfigPaths(),
-    tanstackStart(),
+    tanstackStart({
+      routesDirectory: "src/routes",
+      server: {
+        entry: "src/server.ts",
+      },
+    }),
     react(),
   ],
 });
