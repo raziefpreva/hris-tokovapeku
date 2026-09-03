@@ -1,3 +1,10 @@
 import { defineConfig } from "@tanstack/start/config";
 
-export default defineConfig({});
+export default defineConfig({
+  server: {
+    prerender: {
+      routes: ["/"],
+      crawlLinks: true,
+    },
+  },
+});
