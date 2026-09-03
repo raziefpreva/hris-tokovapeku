@@ -4,10 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build && mkdir -p public && cp -R dist/. public/ 2>/dev/null || true",
-    "build:dev": "vite build --mode development",
-    "preview": "vite preview",
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
