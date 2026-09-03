@@ -1,15 +1,19 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { redirect } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Tokovapeku HRIS — Task Management" },
-      { name: "description", content: "Sistem HRIS Tokovapeku: checklist SOP harian, verifikasi atasan, KPI cabang & karyawan." },
-    ],
-  }),
   beforeLoad: () => {
-    throw redirect({ to: "/auth" });
+    throw redirect({
+      to: "/app",
+    });
   },
-  component: () => null,
+});
+EOFcat << 'EOF' > src/routes/index.tsx
+import { createFileRoute, redirect } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/")({
+  beforeLoad: () => {
+    throw redirect({
+      to: "/app",
+    });
+  },
 });
