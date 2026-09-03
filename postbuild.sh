@@ -1,3 +1,8 @@
+#!/bin/sh
+mkdir -p dist/client
+BOOTSTRAP_JS=$(ls dist/client/assets/bootstrap-*.js 2>/dev/null | head -n 1 | xargs -n 1 basename)
+
+cat << HTML > dist/client/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +13,7 @@
 </head>
 <body>
   <div id="root"></div>
-  <script type="module" src="/src/router.tsx"></script>
+  <script type="module" src="/assets/${BOOTSTRAP_JS}"></script>
 </body>
 </html>
+HTML
