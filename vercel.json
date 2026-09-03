@@ -1,6 +1,5 @@
 {
-  "outputDirectory": ".output/public",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/client/index.html" }
   ]
 }
